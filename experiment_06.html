@@ -16,6 +16,14 @@
       }, 
     });
 
+    var preload = {
+      type: jsPsychPreload,
+      images: [
+        "assets/Slide1.png", "assets/Slide2.png", "assets/Slide3.png", 
+        "assets/Slide4.png", "assets/Slide5.png", "assets/Slide6.png", 
+      ],
+    }
+
     const instructions = {
       type: jsPsychInstructions,
       pages: [
@@ -107,6 +115,7 @@
     }
 
     const timeline = [
+        preload,
         instructions, 
         learning_part,
         test_block_announcement,

@@ -18,6 +18,14 @@
     // previous code wrapped in a new function
     function prepareTimeline() {
 
+    var preload = {
+      type: jsPsychPreload,
+      images: [
+        "assets/Slide1.png", "assets/Slide2.png", "assets/Slide3.png", 
+        "assets/Slide4.png", "assets/Slide5.png", "assets/Slide6.png", 
+      ],
+    }
+    
     const instructions = {
       type: jsPsychInstructions,
       pages: [
@@ -58,6 +66,8 @@
         () => `<p style="font-size:48px;">${jsPsych.timelineVariable('word')}</p>`,
       prompt: "<br/><br/>Have you seen this word before? (y/n)",
       on_finish: function(data){
+        data.word = jsPsych.timelineVariable('word');
+        data.expected = jsPsych.timelineVariable('expected');
         if(jsPsych.pluginAPI.compareKeys(data.response, jsPsych.timelineVariable('expected'))){
           data.correct = true;
         } else {
@@ -109,6 +119,7 @@
     }
 
     const timeline = [
+        preload,
         instructions, 
         learning_part,
         test_block_announcement,
