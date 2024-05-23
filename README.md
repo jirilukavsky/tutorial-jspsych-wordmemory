@@ -20,4 +20,5 @@ Coding materials for jsPsych workshop (May 24, 2024).
 6. Simple timeline with variables (`experiment_02.html`)
 7. Getting responses, larger texts (`experiment_03.html`)
 8. Feedback (`experiment_04.html`)
-9. 
+9. Instructions (`experiment_05.html`)
+10. Building timeline variables from arrays (`experiment_06.html`)
