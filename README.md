@@ -8,6 +8,9 @@ Coding materials for jsPsych workshop (May 24, 2024).
 - [JATOS](https://www.jatos.org/)
 - [vscode](https://code.visualstudio.com/)
     - [LiveServer](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+- R packages
+    - [jatosR](https://github.com/visionlabels/jatosR)
+    - [jspsychread](https://github.com/visionlabels/jspsychread)
 
 ## Steps
 
@@ -23,3 +26,7 @@ Coding materials for jsPsych workshop (May 24, 2024).
 9. Instructions (`experiment_05.html`)
 10. Building timeline variables from arrays (`experiment_06.html`)
 11. JATOS-ify your code (`experiment_07.html`)
+
+12. Let's import the results for analysis (for RStudio use `tutorial-jspsych-wordmemory.Rproj`)
+13. Install package jspsychread (see GitHub for [instructions](https://github.com/visionlabels/jspsychread))
+14. Run `analysis/analysis.R`
