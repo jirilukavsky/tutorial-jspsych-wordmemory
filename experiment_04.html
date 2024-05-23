@@ -28,7 +28,28 @@
       choices: ["y", "n"],
       stimulus: 
         () => `<p style="font-size:48px;">${jsPsych.timelineVariable('word')}</p>`,
-      prompt: "<br/><br/>Have you seen this word before? (y/n)"
+      prompt: "<br/><br/>Have you seen this word before? (y/n)",
+      on_finish: function(data){
+        if(jsPsych.pluginAPI.compareKeys(data.response, jsPsych.timelineVariable('expected'))){
+          data.correct = true;
+        } else {
+          data.correct = false; 
+        }
+      }
+    }
+
+    const feedback = {
+      type: jsPsychHtmlKeyboardResponse,
+      trial_duration: 1000,
+      choices: "NO_KEYS",
+      stimulus: () => {
+        var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+        if(last_trial_correct){
+          return "<p>Correct!</p>"; 
+        } else {
+          return "<p>Wrong.</p>"; 
+        }
+      },
     }
 
     learning_part = {
@@ -39,10 +60,10 @@
     }
 
     testing_part = {
-        timeline: [test_word],
+        timeline: [test_word, feedback],
         timeline_variables: [
-            {word: "dog", },
-            {word: "cat", },
+            {word: "dog", expected: "y", },
+            {word: "cat", expected: "n", },
         ],
         randomize_order: true,
     }
