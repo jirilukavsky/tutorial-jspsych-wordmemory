@@ -18,3 +18,4 @@ Coding materials for jsPsych workshop (May 24, 2024).
 
 5. Minimal examples `experiment_00.html` and `experiment_01.html` (hello world)
 6. Simple timeline with variables (`experiment_02.html`)
+7. Getting responses, larger texts (`experiment_03.html`)
