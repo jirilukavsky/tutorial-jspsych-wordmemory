@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My experiment</title>
+    <script src="jspsych/dist/jspsych.js"></script>
+    <script src="jspsych/dist/plugin-html-keyboard-response.js"></script>
+    <link href="jspsych/dist/jspsych.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body></body>
+  <script>
+    const jsPsych = initJsPsych({
+      on_finish: function() {
+        jsPsych.data.displayData();
+      }, 
+    });
+
+    const show_word = {
+      type: jsPsychHtmlKeyboardResponse,
+      trial_duration: 2000,
+      choices: "NO_KEYS",
+      stimulus: jsPsych.timelineVariable('word')
+    }
+
+    learning_part = {
+        timeline: [show_word],
+        timeline_variables: [
+            {word: "dog", },
+        ],
+    }
+
+    jsPsych.run([learning_part]);
+  </script>
+</html>
