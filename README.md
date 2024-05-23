@@ -22,3 +22,4 @@ Coding materials for jsPsych workshop (May 24, 2024).
 8. Feedback (`experiment_04.html`)
 9. Instructions (`experiment_05.html`)
 10. Building timeline variables from arrays (`experiment_06.html`)
+11. JATOS-ify your code (`experiment_07.html`)
